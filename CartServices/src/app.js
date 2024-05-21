@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-import express from "express";
-import cors from "cors";
-import cookieParser from "cookie-parser";
-import connectDB from "./DB/db.connection.js";
-import cartRoute from "./Routes/cart.route.js";
-import { authenticate } from "./middlewares/auth.middleware.js";
-=======
+
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -15,7 +8,7 @@ import { authenticate } from './middlewares/auth.middleware.js';
 // Load environment variables
 import dotenv from 'dotenv';
 dotenv.config();  // This ensures the environment variables are loaded early
->>>>>>> 26bef40b0eb2315561be0d4e03e9b74a49b920a4
+
 
 const app = express();
 
