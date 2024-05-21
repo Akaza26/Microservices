@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDB from "./DB/db.connection.js";
-import cartRoute from "./routes/product.routes.js";
+import cartRoute from "./Routes/cart.route.js";
 import { authenticate } from "./middlewares/auth.middleware.js";
 
 const app = express();

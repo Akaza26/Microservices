@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { UNAUTHORIZED } from "../constants/httpstatus.js";
+import { UNAUTHORIZED } from "../DB/constants.js";
 import { ApiError } from '../utils/ApiError.js';
 
 const authenticate = async (req, res, next) => {
