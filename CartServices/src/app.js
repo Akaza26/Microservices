@@ -1,14 +1,7 @@
-
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import connectDB from './DB/db.connection.js';
-import { authenticate } from './middlewares/auth.middleware.js';
-
-// Load environment variables
-import dotenv from 'dotenv';
-dotenv.config();  // This ensures the environment variables are loaded early
-
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -16,17 +9,16 @@ app.use(cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true
 }));
+
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); // Add the extended option here
 app.use(express.static('public'));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true })); // Properly configure body-parser
+app.use(bodyParser.json()); // Properly configure body-parser
 
-// Connect to MongoDB
-connectDB();  // Ensure this is called after dotenv.config()
+import { Cartrouter } from './Routes/cart.route.js';
 
-// Routes (Add your route handlers here)
-
-// Error handling middleware
-app.use(authenticate);
+app.use('/carts', Cartrouter);
 
 export { app };

@@ -1,8 +1,8 @@
-import { ApiResponse } from '../utils/ApiResponse.js';
-import { ApiError } from '../utils/ApiError.js';
-import { Product } from '../models/Models/Products.Models.js';
-import { asyncHandler } from '../utils/asyncHandler.js';
-import { INTERNAL_SERVER_ERROR } from '../constants/httpstatus.js';
+import { ApiResponse } from '../Utils/ApiResponse.js';
+import { ApiError } from '../Utils/ApiError.js';
+import { Product } from '../models/Products.Models.js';
+import { asyncHandler } from '../Utils/asyncHandler.js';
+import { INTERNAL_SERVER_ERROR } from '../DB/constants.js';
 
 const getAllProducts = asyncHandler(async (req, res) => {
   try {
