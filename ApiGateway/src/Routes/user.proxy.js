@@ -9,7 +9,20 @@ router.post('/login', async (req, res) => {
         const response = await axios.post(`${USER_SERVICE_URL}/login`, req.body);
         res.json(response.data);
     } catch (error) {
-        res.status(error.response ? error.response.status : 500).json({ message: error.message });
+        const status = error.response ? error.response.status : 500;
+        const message = error.response && error.response.data ? error.response.data.message : error.message;
+        res.status(status).json({ message });
+    }
+});
+
+router.post('/register', async (req, res) => {
+    try {
+        const response = await axios.post(`${USER_SERVICE_URL}/register`, req.body);
+        res.json(response.data);
+    } catch (error) {
+        const status = error.response ? error.response.status : 500;
+        const message = error.response && error.response.data ? error.response.data.message : error.message;
+        res.status(status).json({ message });
     }
 });
 
