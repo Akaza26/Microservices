@@ -1,9 +1,9 @@
-import { ApiResponse } from '../utils/ApiResponse.js';
-import { ApiError } from '../utils/ApiError.js';
-import { uploadonCloudinary } from '../utils/cloudinary.js';
-import { Product } from '../models/Models/Products.Models.js';
-import { asyncHandler } from '../utils/asyncHandler.js';
-import { BAD_REQUEST, INTERNAL_SERVER_ERROR } from '../constants/httpstatus.js';
+import { ApiResponse } from '../Utils/ApiResponse.js';
+import { ApiError } from '../Utils/ApiError.js';
+import { uploadonCloudinary } from '../Utils/cloudinary.js';
+import { Product } from '../models/Products.Models.js';
+import { asyncHandler } from '../Utils/asyncHandler.js';
+import { BAD_REQUEST, INTERNAL_SERVER_ERROR } from '../DB/constants.js';
 
 const storeProducts = asyncHandler(async (req, res) => {
   try {

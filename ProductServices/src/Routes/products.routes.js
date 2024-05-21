@@ -1,4 +1,5 @@
-import { upload } from "../middlewares/multer.middleware.js";
+import { Router } from "express";
+import { upload } from "../middleware/multer.middleware.js";
 import { storeProducts } from "../controllers/Products.controller.js";
 import { getAllProducts } from "../controllers/getallproducts.controller.js";
 
