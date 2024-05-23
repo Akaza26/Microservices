@@ -19,6 +19,6 @@ app.use(bodyParser.json()); // Properly configure body-parser
 
 import { userRouter } from './Routes/user.route.js';
 
-app.use('/user', userRouter);
+app.use('/api/user', userRouter);
 
 export { app };

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { UNAUTHORIZED } from "../DB/constants.js";
-import { ApiError } from '../Utils/ApiError.js';
+import { ApiError } from '../utils/ApiError.js';
 
 const authenticate = async (req, res, next) => {
   const token = req.headers.access_token;
